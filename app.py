@@ -1,8 +1,6 @@
-from flask import Flask, render_template
-import os
+from flaskr import create_app
 
-app = Flask(__name__, template_folder=os.path.join("flaskr", "templates"))
+app = create_app()
 
-@app.route("/")
-def home():
-    return render_template("blog/index.html")
+if __name__ == "__main__":
+    app.run(debug=True)

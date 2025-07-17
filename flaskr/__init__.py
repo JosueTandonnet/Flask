@@ -26,11 +26,12 @@ def create_app(test_config=None):
 
     # a simple page that says hello
     @app.route('/')
-    def index():
+    def home():
         return render_template('blog/index.html')
 
     db.init_app(app)
     app.register_blueprint(auth.bp)
     app.register_blueprint(blog.bp)
+    app.add_url_rule('/', endpoint='index')
 
     return app
