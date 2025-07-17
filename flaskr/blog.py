@@ -32,6 +32,7 @@ def create():
             flash(error)
         else:
             db = get_db()
+            print(f"INSERT post with title={title}, body={body}, author_id={g.user['id']}")
             db.execute(
                 'INSERT INTO post (title, body, author_id)'
                 ' VALUES (?, ?, ?)',
