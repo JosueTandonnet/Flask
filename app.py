@@ -1,6 +1,7 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.join("flaskr", "templates"))
 
 @app.route("/")
 def home():
